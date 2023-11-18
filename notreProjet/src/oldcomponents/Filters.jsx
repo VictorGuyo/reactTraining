@@ -4,7 +4,6 @@ import { useApi } from '../contexts/ContextProducts';
 const Filters = () => {
 const {setCategory, category, resetFilter, setResetFilter} = useApi();
 
-
         const handleFilter = (event) =>{
             const inputValue = event.target.value;
             setCategory([...category, inputValue]);

@@ -1,4 +1,8 @@
 
+* {
+  text-decoration: none;
+  color: black;
+}
 
 /* products.css */
 .grid-card {

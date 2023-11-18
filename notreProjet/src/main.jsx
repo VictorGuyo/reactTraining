@@ -1,48 +1,29 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import App from './App.jsx'
-import './index.css'
-import Product from './components/Product.jsx';
-import ProductsCard from './components/ProductsCard.jsx';
+import ReactDOM from "react-dom/client";
+import React from "react";
+import App from "./App.jsx";
+import "./index.css";
+import NewProductCard from "./components/NewProductCard.jsx";
+import NewProduct from "./components/NewProduct.jsx";
+// import { createreactrouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
-{
-  path: "/",
-  element : <App/>,
-  children: [
-{
-  path:"/product",
-  element: <ProductsCard/>,
-},
-{
-  path:"/product/:id",
-  element: <Product/>,
-}
-  ]
-}
-])
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <NewProductCard />,
+      },
+      {
+        path: "/products/:id",
+        element: <NewProduct />,
+      },
+    ],
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router}/>,
-)
-
-
-// async () => {
-//   try {
-//       const response = await fetch('https://fakestoreapi.com/products/4');
-//       if (response.ok){
-//         console.log(response.json());
-//         return await response.json();
-//       }} catch (err) {
-//           console.error(err);
-//           return null;
-//       }
-// }
-
-// if (response.ok) {
-//   const data = await response.json();
-//   console.log(data); // Utilisez "data" au lieu de "response.json()"
-//   return data;
-
-
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
