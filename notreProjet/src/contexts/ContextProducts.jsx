@@ -4,9 +4,10 @@ const UseProducts = createContext();
 
 function ContextProducts({ children }) {
   const [id, setId] = useState(null);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState([]);
+  const [resetFilter, setResetFilter] = useState([]);
 
-  const productExport = useMemo(() => ({ category, setCategory, id, setId }));
+  const productExport = useMemo(() => ({ category, setCategory, id, setId, resetFilter, setResetFilter }));
   return (
     <UseProducts.Provider value={productExport}>
       {children}

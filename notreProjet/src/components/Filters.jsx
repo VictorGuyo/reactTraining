@@ -1,21 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useApi } from '../contexts/ContextProducts';
  
 const Filters = () => {
-const {setCategory, category} = useApi();
+const {setCategory, category, resetFilter, setResetFilter} = useApi();
 
-    const handleClick = (event) =>{
-        const inputValue = event.target.value;
-        setCategory(inputValue)
+
+        const handleFilter = (event) =>{
+            const inputValue = event.target.value;
+            setCategory([...category, inputValue]);
+        }
+        const handleReset = () => {
+            setCategory(resetFilter);
+        };
+    
+    useEffect(() => {
         console.log(category);
         console.log("CLické")
-    }
+    }, [category])
+
     return (
         <div>
-            <button value="men's clothing" onClick={handleClick}>Vêtements Hommes</button>
-            <button value="jewelry">Bijoux</button>
-            <button value="electronics">Électroniques</button>
-            <button value="women's clothing">Vêtements Femmes</button>
+            <button onClick={handleReset} >X Réinitialiser.</button>
+            <button value="men's clothing" onClick={handleFilter}>Vêtements Hommes</button>
+            <button value="jewelry" onClick={handleFilter}>Bijoux</button>
+            <button value="electronics" onClick={handleFilter}>Électroniques</button>
+            <button value="women's clothing" onClick={handleFilter}>Vêtements Femmes</button>
         </div>
     );
 };
