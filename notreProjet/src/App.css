@@ -4,4 +4,16 @@
   padding: 2rem;
   text-align: center;
 }
-
+.header {
+  background-color: #E6C8AD;
+}
+.title{
+  color: rgb(255, 255, 255);
+}
+.button {
+  border: 2px solid #E6C8AD;
+    border-radius: 16px;
+    background: none;
+    padding: 5px;
+    margin: 10px;
+}
