@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import NewProductCard from "./components/NewProductCard.jsx";
 import NewProduct from "./components/NewProduct.jsx";
-// import { createreactrouter } from "react-router-dom";
+import axios from 'axios'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -15,7 +15,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <NewProductCard />,
-      },
+        loader: () => {  
+          const result = axios
+              .get("https://fakestoreapi.com/products")
+              .then((res) => (res.data));
+              return result
+          }
+        },
       {
         path: "/products/:id",
         element: <NewProduct />,

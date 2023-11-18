@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import "../styles/products.css";
 
 const NewProductCard = () => {
-  const [product, setProduct] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((res) => setProduct(res.data));
-  }, []);
+  const data = useLoaderData();
+  const [product, setProduct] = useState(data);
+  
+  // useEffect(() => {
+  //   axios
+  //     .get("https://fakestoreapi.com/products")
+  //     .then((res) => setProduct(res.data));
+  // }, []);
 
   return (
     <div className="grid-card">
