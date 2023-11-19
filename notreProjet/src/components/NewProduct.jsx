@@ -1,8 +1,12 @@
 import { useParams, useLoaderData } from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 const NewProduct = () => {
   const data = useLoaderData();
+
+  // Methode fetch, useEffect & useParams.
+  // const { id } = useParams;
+
   // const [product, setProduct] = useState(data);
   // const getProduct = async () => {
   //   try {
@@ -31,8 +35,8 @@ const NewProduct = () => {
       <p>{data.category}</p>
       <p>{data.description}</p>
       <p>{data.price} €</p>
-      {/* <p>{product.rating.rate} /10</p>
-      <p>{product.rating.count}</p> */}
+      <p>{data.rating.rate} /10</p>
+      <p>{data.rating.count}</p>
     </div>
   );
 };

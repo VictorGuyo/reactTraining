@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         loader: ({ params }) => {
           const result = axios
             .get(`https://fakestoreapi.com/products/${params.id}`)
-            .then((response) => response.data);
+            .then((res) => res.data);
           return result;
         },
       },
