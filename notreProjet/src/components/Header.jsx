@@ -1,11 +1,13 @@
-import React from 'react';
-
+import React from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
-    return (
-        <div className='header'>
-            <h1 className='title'>Mon Ptit Shop</h1>
-        </div>
-    );
+  return (
+    <div className="header">
+      <Link className="title" to="/">
+        Mon Ptit Shop
+      </Link>
+    </div>
+  );
 };
 
 export default Header;
