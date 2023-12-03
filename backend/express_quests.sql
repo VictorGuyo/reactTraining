@@ -1,12 +1,12 @@
 -- SQLBook: Code
--- Active: 1701552274622@@127.0.0.1@3306@express_quests
+-- Active: 1701596835440@@127.0.0.1@3306@express_quests
 
 CREATE TABLE
     items (
         id int primary key NOT NULL AUTO_INCREMENT,
         title varchar(255) NOT NULL,
         price INT NOT NULL,
-        description varchar(350) NOT NULL,
+        description varchar(805) NOT NULL,
         category varchar(255) NOT NULL,
         image varchar(255) NOT NULL
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb3;
