@@ -1,10 +1,8 @@
-const database = require("../../database.js");
-
 const getItems = (req, res) => {
   database
-    .query("SELECT * FROM items")
-    .then(([items]) => {
-      res.json(items);
+    .query(`SELECT * FROM items`)
+    .then(([item]) => {
+      res.json(item);
     })
     .catch((err) => {
       console.error(err);
@@ -87,5 +85,19 @@ module.exports = {
   getItemById,
   postItems,
   updateItems,
-  deleteItems
+  deleteItems,
 };
+
+const database = require("../../database.js");
+
+// const getItems = (req, res) => {
+//   database
+//     .query("SELECT * FROM items")
+//     .then(([items]) => {
+//       res.json(items);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.sendStatus(422);
+//     });
+// };

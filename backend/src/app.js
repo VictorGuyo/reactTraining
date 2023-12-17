@@ -13,4 +13,3 @@ app.put("/items/:id", itemControllers.updateItems);
 app.delete("/items/:id", itemControllers.deleteItems);
 
 module.exports = app;
-
